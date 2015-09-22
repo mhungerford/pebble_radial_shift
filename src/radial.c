@@ -31,9 +31,9 @@ static void canvas_update_proc(Layer *layer, GContext *ctx) {
     graphics_context_set_fill_color(ctx, segment->color);
 
     graphics_fill_radial(
-        ctx, grect_inset(bounds, GEdgeInsets(segment->outer)), 
-        GOvalScaleModeFitCircle,
-        segment->outer - segment->inner, 
+        ctx, grect_inset(bounds, GEdgeInsets(90 - segment->outer)), 
+        GOvalScaleModeFillCircle,
+        segment->outer - segment->inner + 1, 
         angle_start, angle_end);
   }
 }
