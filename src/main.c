@@ -7,8 +7,8 @@ static Window *my_window;
 
 static Layer *canvas_layer = NULL;
 
-GFont *lcd_date_font = NULL;
-GFont *lcd_time_font = NULL;
+GFont lcd_date_font = NULL;
+GFont lcd_time_font = NULL;
 GBitmap *mask = NULL;
 
 //Digital Time Display
@@ -55,8 +55,8 @@ static GPoint tick_point_12;
       (GPoint){CAT(tick_point_, hour).x - 16, CAT(tick_point_, hour).y - 10}, .size = {32,32}}, \
       GTextOverflowModeFill, GTextAlignmentCenter, NULL)
 
-static GFont *custom_font_text = NULL;
-static GFont *custom_font_outline = NULL;
+static GFont custom_font_text = NULL;
+static GFont custom_font_outline = NULL;
 
 static Layer *analog_layer;
 

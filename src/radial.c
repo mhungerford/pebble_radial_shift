@@ -30,8 +30,10 @@ static void canvas_update_proc(Layer *layer, GContext *ctx) {
     int angle_end = angle_start + (segment->width * TRIG_MAX_ANGLE) / 360;
     graphics_context_set_fill_color(ctx, segment->color);
 
-    graphics_fill_radial(ctx, center, 
-        segment->inner, segment->outer, 
+    graphics_fill_radial(
+        ctx, grect_inset(bounds, GEdgeInsets(segment->outer)), 
+        GOvalScaleModeFitCircle,
+        segment->outer - segment->inner, 
         angle_start, angle_end);
   }
 }
